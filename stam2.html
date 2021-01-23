@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title of the document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS\style.css">
+</head>
+
+<body>
+ 
+    <script>
+ $("#orderTotal").click(function () {
+    calculatePrice();
+});
+
+function calculatePrice()
+{
+    
+    var Tshirt = 10.00;
+    var undershirt = 10.00;
+    var sweater = 20.00;
+    var hoodie = 30.00;
+    var coat = 50.00;
+
+    var quantityTshirt = $("#quantityTshirt").val();
+    var quantityundershirt =  $("#quantityundershirt").val();
+    var quantitysweater =  $("#quantitysweater").val();
+    var quantityhoodie = $("#quantityhoodie").val();
+    var quantitycoat = $("#quantitycoat").val();
+
+
+    var checkt = document.getElementsByClassName('input1');
+    var sumt = 0;
+    var checku = document.getElementsByClassName('input2');;
+    var sumu = 0;
+    var checks = document.getElementsByClassName('input3');;
+    var sums = 0;
+    var checkh = document.getElementsByClassName('input4');;
+    var sumh = 0;
+    var checkc = document.getElementsByClassName('input5');;
+    var sumc = 0;
+
+    for( i = 0 ; i < 3 ; i++){
+        if(checkt[i].checked == true ){
+            sumt += 3;
+        }
+    }
+    for( i = 0 ; i < 3 ; i++){
+        if(checku[i].checked == true ){
+            sumu += 3;
+        }
+    }
+    for( i = 0 ; i < 3 ; i++){
+        if(checks[i].checked == true ){
+            sums += 3;
+        }
+    }
+    for( i = 0 ; i < 3 ; i++){
+        if(checkh[i].checked == true ){
+            sumh += 3;
+        }
+    }
+    for( i = 0 ; i < 3 ; i++){
+        if(checkc[i].checked == true ){
+            sumc += 3;
+        }
+    }
+    var colort = document.getElementsByName('colort');
+    if(colort[1].checked){
+        sumt += 5;
+    }
+    if(colort[2].checked){
+        sumt += -2;
+    }
+    var coloru = document.getElementsByName('coloru');
+    if(coloru[1].checked){
+        sumu += 5;
+    }
+    if(coloru[2].checked){
+        sumu += -2;
+    }
+    var colors = document.getElementsByName('colors');
+    if(colors[1].checked){
+        sums += 5;
+    }
+    if(colors[2].checked){
+        sums += -2;
+    }
+    var colorh = document.getElementsByName('colorh');
+    if(colorh[1].checked){
+        sumh += 5;
+    }
+    if(colorh[2].checked){
+        sumh += -2;
+    }
+    var colorc = document.getElementsByName('colorc');
+    if(colorc[1].checked){
+        sumc += 5;
+    }
+    if(colorc[2].checked){
+        sumc += -2;
+    }
+
+
+
+
+
+
+
+    var sizet = document.getElementsByName('sizet');
+    if(sizet[0].checked){
+        Tshirt = Tshirt * 0.9;
+    }
+    if(sizet[3].checked){
+        Tshirt =  Tshirt * 1.1;
+    }
+    var sizeu = document.getElementsByName('sizeu');
+    if(sizeu[1].checked){
+        undershirt = undershirt * 0.9;
+    }
+    if(sizeu[2].checked){
+        undershirt = undershirt * 1.1;
+    }
+    var sizes = document.getElementsByName('sizes');
+    if(sizes[1].checked){
+        sweater = sweater  * 0.9;
+    }
+    if(sizes[2].checked){
+        sweater = sweater * 1.1;
+    }
+    var sizeh = document.getElementsByName('sizeh');
+    if(sizeh[1].checked){
+        hoodie = hoodie * 0.9 ;
+    }
+    if(sizeh[2].checked){
+        hoodie = hoodie * 1.1;
+    }
+    var sizec = document.getElementsByName('sizec');
+    if(sizec[1].checked){
+        coat = coat * 0.9;
+    }
+    if(sizec[2].checked){
+        coat = coat * 1.1;
+    }
+
+
+
+
+
+    
+    var total = (quantityTshirt * Tshirt + sumt*quantityTshirt) + (quantityundershirt * undershirt + sumu*quantityundershirt) + (quantitysweater * sweater + sums*quantitysweater) + (quantityhoodie * hoodie + sumh*quantityhoodie)+(quantitycoat * coat + sumc*quantitycoat);
+
+    console.log(total);
+    
+    $("#orderTotal").val(total);
+}
+    
+    
+</script>
+<table align="center">
+    <tr>
+        <td>
+            <h2>
+                <a href="index.html" target=blank>main page &nbsp&nbsp&nbsp&nbsp&nbsp</a>
+            </h2>
+        </td>
+        <td>
+    <h2>
+     <a href= "page2.html" target= blank > Actors List &nbsp&nbsp&nbsp&nbsp&nbsp</a>
+     </h2>
+    </td>
+    <td>
+    <h2>
+    <a href= "page3.html" target= blank > Popular Series &nbsp&nbsp&nbsp&nbsp&nbsp </a>
+    </h2>
+</td>
+<td>
+    <h2>
+        <a href="stam2.html" target=blank>maccabi haifa order &nbsp&nbsp&nbsp&nbsp&nbsp </a>
+    </h2>
+    </td>
+</tr>
+</table>
+<input dir="rtl" type="text" id="order id" value="29760734" readonly>
+        <label for="order id">order id </label>
+         <br> <br>
+        <input dir="rtl" type="text" id="first name" placeholder="please enter your first name" maxlength="20">
+        <label for="first name"> first name</label>
+           <br> <br>
+        <input dir="rtl" type="text" id="last name" placeholder="please enter your last name" maxlength="20">
+        <label for="last name"> last name</label>
+      <br> <br>
+      <label for="">adress</label>
+    <br>
+    <textarea name="adress" id="adress" cols="30" rows="10"></textarea>
+    <br>
+<table>
+    <tr align="center">
+        <td><hr>
+            Dress_options<hr>
+        </td>
+        <td><hr>
+            Color<hr>
+        </td>
+    
+        <td><hr>
+            Size<hr>
+        </td>
+        <td><hr>
+            logo location<hr>
+        </td>
+        <td><hr>
+            Quantity<hr>
+        </td>
+        <td><hr>
+            Price<hr>
+        </td>
+    </tr>
+    <form name="ordermaccabi">
+        <tr>
+            <td>
+                Tshirt
+            </td>
+            <td>
+                <input type="radio" id="white" name="colort" value="0" checked><label for="white"> white</label>
+                <input type="radio" id="green" name="colort" value="0" ><label for="green"> Green</label>
+                <input type="radio" id="Blue" name="colort" value="0" ><label for="Blue"> Blue</label>
+                <input type="radio" id="Black" name="colort" value="0" ><label for="Black"> Black</label>
+                
+            </td>
+            <td>
+               
+    
+                <label for="s"> S</label><input type="radio" id="s" name="sizet" value="0" >
+                <label for="m"> M</label><input type="radio" id="m" name="sizet" value="0" >
+                <label for="l"> L</label><input type="radio" id="l" name="sizet" value="0" >
+                <label for="xl"> XL</label><input type="radio" id="xl" name="sizet" value="0" >
+            </td>
+            <td>
+                <input class = "input1" type="checkbox" id="logo" name="logo" value="3"><label for="rightlogo"> right</label>
+                <input class = "input1" type="checkbox" id="logo" name="logo" value="3"><label for="backlogo"> back</label>
+                <input class = "input1" type="checkbox" id="logo" name="logo" value="3"><label for="lefttlogo"> left</label>
+                                
+            </td>
+            <td align="center">
+                <input type="number" id="quantityTshirt" name="quantityTshirt" value="0">
+            </td>
+            <td align="center">
+                $10.00
+            </td>
+        </tr>
+        <tr>
+            <td>
+                undershirt
+            </td>
+            <td>
+                <input type="radio" id="white" name="coloru" value="0" checked><label for="white"> white</label>
+                <input type="radio" id="green" name="coloru" value="0" ><label for="green"> Green</label>
+                <input type="radio" id="Blue" name="coloru" value="0" ><label for="Blue"> Blue</label>
+                <input type="radio" id="Black" name="coloru" value="0" ><label for="Black"> Black</label>
+            </td>
+            
+            <td>
+               
+    
+                <label for="s"> S</label><input type="radio" id="s" name="sizeu" value="0" >
+                <label for="m"> M</label><input type="radio" id="m" name="sizeu" value="0" >
+                <label for="l"> L</label><input type="radio" id="l" name="sizeu" value="0" >
+                <label for="xl"> XL</label><input type="radio" id="xl" name="sizeu" value="0" >
+            </td>
+            <td>
+                <input type="checkbox" class = "input2" id="logo3" name="logou" value="3"><label for="rightlogo"> right</label>
+                <input type="checkbox" class = "input2" id="logo4" name="logou" value="3"><label for="backlogo"> back</label>
+                <input type="checkbox" class = "input2" id="logo5" name="logou" value="3"><label for="lefttlogo"> left</label>
+                                
+            </td>
+            <td align="center">
+                <input type="number" id="quantityundershirt" name="quantityundershirt" value="0">
+            </td>
+            <td align="center">
+                $20.00
+            </td>
+        </tr>
+        <tr>
+            <td>
+                sweater
+            </td>
+            <td>
+                <input type="radio" id="white" name="colors" value="0" checked><label for="white"> white</label>
+                <input type="radio" id="green" name="colors" value="0" ><label for="green"> Green</label>
+                <input type="radio" id="Blue" name="colors" value="0" ><label for="Blue"> Blue</label>
+                <input type="radio" id="Black" name="colors" value="0" ><label for="Black"> Black</label>
+            </td>
+            
+            <td>
+               
+    
+                <label for="s"> S</label><input type="radio" id="s" name="sizes" value="0" >
+                <label for="m"> M</label><input type="radio" id="m" name="sizes" value="0" >
+                <label for="l"> L</label><input type="radio" id="l" name="sizes" value="0" >
+                <label for="xl"> XL</label><input type="radio" id="xl" name="sizes" value="0" >
+            </td>
+            <td>
+                <input type="checkbox" class = "input3" id="logo6" name="logo" value="3"><label for="rightlogo"> right</label>
+                <input type="checkbox" class = "input3" id="logo7" name="logo" value="3"><label for="backlogo"> back</label>
+                <input type="checkbox" class = "input3" id="logo8" name="logo" value="3"><label for="lefttlogo"> left</label>
+                                
+            </td>
+            <td align="center">
+                <input type="number" id="quantitysweater" name="quantitysweater" value="0">
+            </td>
+            <td align="center">
+                $30.00
+            </td>
+        </tr>
+        <tr>
+            <td>
+                hoodie
+            </td>
+            <td>
+                <input type="radio" id="white" name="colorh" value="0" checked><label for="white"> white</label>
+                <input type="radio" id="green" name="colorh" value="0" ><label for="green"> Green</label>
+                <input type="radio" id="Blue" name="colorh" value="0" ><label for="Blue"> Blue</label>
+                <input type="radio" id="Black" name="colorh" value="0" ><label for="Black"> Black</label>
+            </td>
+            
+            <td>
+               
+    
+                <label for="s"> S</label><input type="radio" id="s" name="sizeh" value="0" >
+                <label for="m"> M</label><input type="radio" id="m" name="sizeh" value="0" >
+                <label for="l"> L</label><input type="radio" id="l" name="sizeh" value="0" >
+                <label for="xl"> XL</label><input type="radio" id="xl" name="sizeh" value="0" >
+            </td>
+            <td>
+                <input type="checkbox" class = "input4" id="logo9" name="logo" value="3"><label for="rightlogo"> right</label>
+                <input type="checkbox" class = "input4" id="logo10" name="logo" value="3"><label for="backlogo"> back</label>
+                <input type="checkbox" class = "input4" id="logo11" name="logo" value="3"><label for="lefttlogo"> left</label>
+                                
+            </td>
+            <td align="center">
+                <input type="number" id="quantityhoodie" name="quantityhoodie" value="0">
+            </td>
+            <td align="center">
+                $45.00
+            </td>
+        </tr>
+        <tr>
+            <td>
+                coat
+            </td>
+            <td>
+                <input type="radio" id="white" name="colorc" value="0" checked><label for="white"> white</label>
+                <input type="radio" id="green" name="colorc" value="0" ><label for="green"> Green</label>
+                <input type="radio" id="Blue" name="colorc" value="0" ><label for="Blue"> Blue</label>
+                <input type="radio" id="Black" name="colorc" value="0" ><label for="Black"> Black</label>
+            </td>
+           
+            <td>
+               
+    
+                <label for="s"> S</label><input type="radio" id="s" name="sizec" value="0" >
+                <label for="m"> M</label><input type="radio" id="m" name="sizec" value="0" >
+                <label for="l"> L</label><input type="radio" id="l" name="sizec" value="0" >
+                <label for="xl"> XL</label><input type="radio" id="xl" name="sizec" value="0" >
+            </td>
+            <td>
+                <input type="checkbox" class = "input5" id="logo12" name="logo" value="3"><label for="rightlogo"> right</label>
+                <input type="checkbox" class = "input5" id="logo13" name="logo" value="3"><label for="backlogo"> back</label>
+                <input type="checkbox" class = "input5" id="logo14" name="logo" value="3"><label for="lefttlogo"> left</label>
+                                
+            </td>
+            <td align="center">
+                <input type="number" id="quantitycoat" name="quantitycoat" value="0">
+            </td>
+            <td align="center">
+                $50.00
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+                <button type="button" onclick="calculatePrice()">quick calculation  </button>
+            </td>
+            <td>
+                <br>
+                <button type="button" onclick="">Submit Order</button>
+            </td>
+            
+            <td>
+            </td>
+            <td>
+                <br>
+                <hr>
+                Order total: <b>$</b>
+                <input type="text"  name="orderTotal" id="orderTotal" Size=6 readonly>
+            </td>
+        </tr>
+        </form>
+</table>
+<td> <a href= "Main.html" target= blank > back to the main page </a> </td> 
+
+</body>
+</html>
